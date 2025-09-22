@@ -39,6 +39,9 @@
 
 <script>
 
+    var stompClient = null;
+
+
     function setConnected(connected) {
         document.getElementById("sendMessage").disabled = !connected;
     }

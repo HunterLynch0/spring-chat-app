@@ -78,8 +78,11 @@
         document.getElementById('messageInput').value = '';
     }
 
-    document.getElementById('sendMessage').onclick = sendMessage;
-    window.onload = connect;
+    window.onload = function () {
+        setConnected(false)
+        connect();
+        document.getElementById('sendMessage').onclick = sendMessage;
+    }
 
 </script>
 </html>

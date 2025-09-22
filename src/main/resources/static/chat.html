@@ -47,7 +47,7 @@
     }
 
     function connect() {
-         var socket = new SockJS('/chat');
+         var socket = new SockJS('/ws-chat');
          stompClient = Stomp.over(socket);
          stompClient.connect({}, function (frame) {
              setConnected(true);
@@ -58,11 +58,11 @@
     }
 
     function showMessage(message) {
-        const chat = document.getElementById('chat');
-        const messageElement = document.createElement('div');
+        var chat = document.getElementById('chat');
+        var messageElement = document.createElement('div');
         messageElement.textContent = message.sender + ' : ' + message.content;
         console.log(messageElement.textContent);
-        messageElement.class = "border-bottom mb-1";
+        messageElement.className = "border-bottom mb-1";
         chat.appendChild(messageElement);
         chat.scrollTop = chat.scrollHeight;
     }

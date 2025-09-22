@@ -15,15 +15,13 @@ public class ChatController {
         return message;
     }
 
-    // serve it at the root URL
     @GetMapping("/")
     public String home() {
-        return "forward:/chat.html";   // file is in static/
+        return "forward:/chat.html";
     }
 
-    // optional: also serve at /chat
     @GetMapping("/chat")
     public String chat() {
-        return "forward:/chat.html";   // note the leading slash + .html
+        return "forward:/chat.html";
     }
 }
